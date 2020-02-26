@@ -1,0 +1,98 @@
+//补充的css
+$white:white;
+//.el-message:nth-child(n){
+//  margin-top:(n * 60 + 20)px;
+//}
+@mixin bg($color){
+  background-color: $color;
+}
+
+.bg-white{
+  @include bg($white)
+}
+
+.hf-container{
+  // padding: 20px;
+}
+
+/* 表头显示 "*" */
+.el-table th.required>div::before{
+  content: '*'!important;
+  background: unset!important;
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+
+/*input 去除箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/*table错位*/
+body .el-table th.gutter{
+  display: table-cell!important;
+}
+
+body .el-table colgroup.gutter{
+  display: table-cell!important;
+}
+
+/*层级关系*/
+.el-loading-mask{z-index: 999}
+/*图片预览插件层级*/
+.pswp{z-index: 9999!important;}
+
+
+.top .left .el-form-item{
+  //display: inline-flex;
+  //height: 40px;
+}
+/*打印容器*/
+[class*="print-container"]{
+  visibility: hidden;
+}
+.print-full-page{
+  page-break-after:always
+}
+
+table{
+  border-collapse: collapse;
+}
+/*推送弹窗*/
+.notify-pushinfo-class{
+  width: fit-content;
+  &.el-notification__title{
+
+  }
+}
+/*清除浮动*/
+.clearfix:after{
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+
+/*表格红色行*/
+.el-table .danger-row {
+  background: #FF9999;
+}
+
+/*弹窗关闭动画取消*/
+.dialog-fade-leave-active {
+  // animation: unset!important;;
+  animation-duration: 0ms!important;
+}
+
+// 固定弹窗高度
+.el-dialog__body {
+  max-height: 80vh;
+  overflow: auto;
+}

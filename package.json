@@ -1,0 +1,101 @@
+{
+  "name": "web-template",
+  "version": "0.0.1",
+  "author": "yangmi",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "server": "serve -s dist",
+    "mock": "node MockServer.js",
+    "local": "vue-cli-service serve --mode local",
+    "build": "node build/index.js",
+    "build-sit": "vue-cli-service build --mode sit",
+    "build:preview": "node build/index.js --preview",
+    "build:report": "node build/index.js --report",
+    "deploy-sit": "npm run build-sit && cross-env NODE_ENV=sit node ./deploy",
+    "deploy": "npm run build && node ./deploy",
+    "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
+    "lint": "vue-cli-service lint",
+    "docs": "npx vuepress dev docs",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dayjs": "^1.8.14",
+    "decimal.js": "^10.2.0",
+    "echarts": "^4.2.1",
+    "element-ui": "2.12.0",
+    "exif-js": "^2.3.0",
+    "fuse.js": "3.4.4",
+    "js-cookie": "2.2.0",
+    "nprogress": "0.2.0",
+    "screenfull": "4.2.0",
+    "vue": "^2.6.10",
+    "vue-count-to": "^1.0.13",
+    "vue-photo-preview": "^1.1.3",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.1.0",
+    "vuex-persistedstate": "^2.5.4",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/register": "7.0.0",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.1.2",
+    "@vue/cli-plugin-babel": "3.6.0",
+    "@vue/cli-plugin-eslint": "^3.9.1",
+    "@vue/cli-plugin-unit-jest": "3.6.3",
+    "@vue/cli-service": "3.6.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "autoprefixer": "^9.5.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "23.6.0",
+    "chalk": "2.4.2",
+    "compression-webpack-plugin": "^3.0.0",
+    "connect": "3.6.6",
+    "eslint": "5.15.3",
+    "eslint-plugin-vue": "5.2.2",
+    "filemanager-webpack-plugin": "^2.0.5",
+    "html-webpack-plugin": "3.2.0",
+    "mockjs": "^1.0.1-beta3",
+    "node-sass": "^4.9.0",
+    "runjs": "^4.3.2",
+    "sass-loader": "^7.1.0",
+    "scp2": "^0.5.0",
+    "script-ext-html-webpack-plugin": "2.1.3",
+    "script-loader": "0.7.2",
+    "serve-static": "^1.13.2",
+    "svg-sprite-loader": "4.1.3",
+    "svgo": "1.2.2",
+    "terser-webpack-plugin": "^2.2.2",
+    "vue-loader": "^15.7.2",
+    "vue-skeleton-webpack-plugin": "^1.2.2",
+    "vue-template-compiler": "^2.6.10",
+    "vuepress": "^1.0.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "engines": {
+    "node": ">= 8.9",
+    "npm": ">= 3.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": ""
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "license": "MIT"
+}
