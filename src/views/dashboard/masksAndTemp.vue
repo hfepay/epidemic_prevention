@@ -5,7 +5,9 @@
       <div class="width33">
         <masks-top10></masks-top10>
       </div>
-      <div class="width66"></div>
+      <div class="width66">
+        <now-temp-chart></now-temp-chart>
+      </div>
     </div>
   </div>
 </template>
@@ -13,12 +15,10 @@
 <script>
 import masksHeader from '@/views/dashboard/components/masksHeader'
 import masksTop10 from '@/views/dashboard/components/masksTop10'
+import nowTempChart from '@/views/dashboard/components/nowTempChart'
 export default {
   name: 'MasksAndTemp',
-  components: { masksHeader, masksTop10 },
-  created() {
-    console.log(masksHeader)
-  }
+  components: { masksHeader, masksTop10, nowTempChart },
 }
 </script>
 
@@ -32,11 +32,12 @@ export default {
     display: flex;
   }
   .width33 {
-    width: 33%;
+    width: 33.2%;
     height: 100%;
   }
   .width66 {
-    width: 66%;
+    width: 66.4%;
+    margin-left: 0.4%;
     height: 100%;
   }
 </style>
