@@ -6,13 +6,13 @@
 
     <div class="right-menu">
       <template v-if="device!=='mobile'">
-        <theme-picker class="right-menu-item hover-effect" @change="themeChange" />
+<!--        <theme-picker class="right-menu-item hover-effect" @change="themeChange" />-->
 
         <screenfull id="screenfull" class="right-menu-item hover-effect" />
 
-        <el-tooltip content="全局大小" effect="dark" placement="bottom">
-          <size-select id="size-select" class="right-menu-item hover-effect" />
-        </el-tooltip>
+<!--        <el-tooltip content="全局大小" effect="dark" placement="bottom">-->
+<!--          <size-select id="size-select" class="right-menu-item hover-effect" />-->
+<!--        </el-tooltip>-->
       </template>
       <div class="right-menu-item hover-effect">
         {{ userInfo.name }}
@@ -79,7 +79,7 @@ export default {
     themeChange(val) {
       this.$store.dispatch('settings/changeSetting', {
         key: 'theme',
-        value: val
+        value: '#071124'
       })
     },
     toggleSideBar() {
@@ -102,7 +102,7 @@ export default {
     height: 50px;
     overflow: hidden;
     position: relative;
-    background: #fff;
+    background: #010A1B;
     box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
     .hamburger-container {

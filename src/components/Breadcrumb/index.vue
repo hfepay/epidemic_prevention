@@ -62,8 +62,10 @@ export default {
     line-height: 50px;
     margin-left: 10px;
     .no-redirect {
-      color: #97a8be;
       cursor: text;
+      font-family:Source Han Sans CN;
+      font-weight:bold;
+      color:rgba(255,255,255,1);
     }
   }
 </style>

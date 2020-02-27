@@ -5,7 +5,7 @@
       <el-form ref="loginForm" :model="loginForm" :rules="loginRules" size="large" class="login-form">
         <div class="login-logo"></div>
         <div class="title" style="font-weight: bold">WELCOME</div>
-        <div class="title">欢迎您，<br>使用黔易订订餐管理系统</div>
+        <div class="title">欢迎您，<br>使用智慧防疫管理系统</div>
         <br>
         <el-form-item label="" prop="account">
           <base-input v-model.trim="loginForm.account" placeholder="账号" prefix-icon="el-icon-user-solid"/>
@@ -119,8 +119,8 @@ export default {
 
     .login-left {
       width: 65vw;
-      background-size: 60% auto;
       background: rgba(247, 223, 198, 1) url("./../../assets/image/loginL.png") no-repeat center;
+      background-size: 100% 100%;
     }
 
     .login-right {
@@ -130,10 +130,9 @@ export default {
       align-items: center;
 
       .login-logo {
-        height: 133px;
-        background: url("./../../assets/image/logo.png") no-repeat left;
-        margin-bottom: 60px;
-        background-size: auto 100%;
+        height: 46px;
+        background: url("./../../assets/image/logoAndTitle.png") no-repeat left;
+        background-size: 185px;
       }
     }
 

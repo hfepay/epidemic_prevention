@@ -30,12 +30,6 @@ const router = [{
       meta: { title: '角色管理' }
     },
     {
-      path: 'merchant',
-      name: 'Merchant',
-      component: () => import(`@/views${moduleName}/merchant`),
-      meta: { title: '商户管理' }
-    },
-    {
       path: 'add-role',
       name: 'AddRole',
       hidden: true,

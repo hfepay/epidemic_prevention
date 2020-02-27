@@ -20,8 +20,7 @@ import { AppMain, Navbar, Sidebar, TagsView } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
 import { mapState, mapGetters } from 'vuex'
 import variables from '@/styles/variables.scss'
-import { WebsocketMixins } from '@/mixins/websocket-mixins'
-import notifyMe from '@/utils/notification'
+
 export default {
   name: 'Layout',
   components: {
@@ -30,7 +29,7 @@ export default {
     Sidebar,
     TagsView
   },
-  mixins: [ResizeMixin, WebsocketMixins],
+  mixins: [ResizeMixin],
   computed: {
     ...mapState({
       sidebar: state => state.app.sidebar,
@@ -55,12 +54,6 @@ export default {
   methods: {
     handleClickOutside() {
       this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
-    },
-    websocketonmessageCallBack(data) {
-      if (typeof data === 'object') notifyMe(data.content, data.title, data.imgUrl)
-    },
-    websocketonopenCallBack() {
-      notifyMe('', '订单通知已开启！')
     }
   }
 }

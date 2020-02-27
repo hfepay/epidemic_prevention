@@ -6,7 +6,7 @@ const router = [{
     {
       path: 'dashboard',
       name: 'Dashboard',
-      component: () => import('@/views/dashboard'),
+      component: () => import('@/views/dashboard/masksAndTemp'),
       meta: { title: '首页', icon: 'dashboard', affix: true }
     }
   ]

@@ -11,6 +11,6 @@ const getters = {
   permission: state => state.permission.permission,
   visitedViews: state => state.tagsView.visitedViews,
   cachedViews: state => state.tagsView.cachedViews,
-  projectName: () => '贵州省机场集团“黔易订”管理系统'
+  projectName: () => '智慧防疫管理系统'
 }
 export default getters

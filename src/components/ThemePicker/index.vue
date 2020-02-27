@@ -9,7 +9,7 @@
 
 <script>
 const version = require('element-ui/package.json').version // element-ui version from node_modules
-const ORIGINAL_THEME = '#409EFF' // default color
+const ORIGINAL_THEME = '#071124' // default color
 import { mapActions } from 'vuex'
 export default {
   data() {
@@ -48,7 +48,7 @@ export default {
     ...mapActions({ 'changeSetting': 'settings/changeSetting' }),
     resetTheme() {
       document.head.removeChild(document.getElementById('chalk-style'))
-      this.changeSetting({ key: 'theme', value: '' })
+      this.changeSetting({ key: 'theme', value: '#071124' })
     },
     async updateTheme(val) {
       const oldVal = this.chalk ? this.theme : ORIGINAL_THEME

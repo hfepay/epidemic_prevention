@@ -34,18 +34,7 @@ export const commonRouter = [
   { path: '/404', component: () => import('@/views/404'), hidden: true },
   { path: '/401', component: () => import('@/views/401'), hidden: true },
   { path: '/test', component: () => import('@/views/test'), hidden: true }, // 测试页
-  { path: '*', redirect: '/404', hidden: true },
-  {
-    path: '/redirect',
-    component: Layout,
-    hidden: true,
-    children: [
-      {
-        path: '/redirect/:path*',
-        component: () => import('@/views/redirect/index')
-      }
-    ]
-  }
+  { path: '*', redirect: '/404', hidden: true }
   /* {
     path: '/',
     component: Layout,
