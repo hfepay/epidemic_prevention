@@ -36,11 +36,21 @@ export default {
       font-size:20px;
       font-weight:bold;
       color:rgba(255,255,255,1);
-      background-image: linear-gradient(to right, rgb(23, 88, 133),rgb(0, 10, 29));
+      background-image: linear-gradient(to right, rgb(1, 35, 60),rgb(0, 10, 29));
     }
     .right-slot {
       height: 100%;
       float: right;
+    }
+    .title /deep/.el-range-editor--small .el-range-input {
+      background-color: #010A1B;
+    }
+    .title /deep/.el-range-editor--small.el-input__inner {
+      background-color: #010A1B;
+      border: 1px solid #057AC5;
+    }
+    .title /deep/ .el-range-editor--small .el-range-separator {
+      color: #606266;
     }
     .body {
       height: calc(100% - 50px);

@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" style="width: 100%;height:500px;" />
+  <div :id="id" style="width: 100%; height: calc(100% - 50px);" />
 </template>
 
 <script>
