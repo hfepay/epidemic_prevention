@@ -1,9 +1,11 @@
 const red = '#D60000'
 const green = '#4FB809'
-export const getPieOption = (data = [
-  { value: 80, name: '正常' },
-  { value: 20, name: '异常' }
-]) => {
+export const getPieOption = (options = {
+  data: [
+    { value: 80, name: '正常' },
+    { value: 20, name: '异常' }
+  ], name: '体温测量', yType: ''
+}) => {
   return {
     tooltip: {
       trigger: 'item',
@@ -19,12 +21,12 @@ export const getPieOption = (data = [
         lineHeight: 20,
         color: 'white'
       },
-      data: data.map(item => item.name)
+      data: options.data.map(item => item.name)
     },
     color: [green, red],
     series: [
       {
-        name: '体温测量',
+        name: options.name,
         type: 'pie',
         radius: ['50%', '70%'],
         avoidLabelOverlap: false,
@@ -35,7 +37,7 @@ export const getPieOption = (data = [
           },
           emphasis: {
             show: true,
-            formatter: '{b}: {d}人',
+            formatter: '{b}: {d}',
             textStyle: {
               fontSize: 20,
               fontWeight: 'bold'
@@ -47,13 +49,13 @@ export const getPieOption = (data = [
             show: false
           }
         },
-        data: data
+        data: options.data
       }
     ]
   }
 }
 
-export const getLineOption = (options) => {
+export const getLineOption = (options = {}) => {
   return {
     tooltip: {
       trigger: 'axis',
@@ -87,6 +89,9 @@ export const getLineOption = (options) => {
         textStyle: {
           color: 'white',
           fontSize: 12
+        },
+        formatter: function(val) {
+          return val + (options.yType || '')
         }
       }
     },
@@ -95,7 +100,7 @@ export const getLineOption = (options) => {
     },
     series: [
       {
-        data: [172, 187, 213, 240, 220, 190, 300],
+        data: options.data || [172, 187, 213, 240, 220, 190, 300],
         type: 'line',
         symbolSize: 10,
         itemStyle: {

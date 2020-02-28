@@ -49,7 +49,6 @@ export default {
 
     .detail {
       min-width: 120px;
-      height: 40px;
       text-align: center;
       border: 1px solid rgba(5, 122, 197, 1);
       border-radius: 19px;

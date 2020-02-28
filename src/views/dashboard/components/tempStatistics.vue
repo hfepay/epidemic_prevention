@@ -12,7 +12,7 @@
     </template>
     <div class="this-body">
       <div class="this-header">
-        <el-radio-group v-model="radio1">
+        <el-radio-group v-if="thisHeader" v-model="radio1">
           <el-radio-button label="1">数量统计</el-radio-button>
           <el-radio-button label="2">百分比</el-radio-button>
         </el-radio-group>
@@ -29,6 +29,12 @@ import { getLineOption } from '@/views/dashboard/components/option'
 
 export default {
   name: 'NowTempChart',
+  props: {
+    thisHeader: {
+      type: Boolean,
+      default: true
+    }
+  },
   data() {
     return {
       radio1: '1'

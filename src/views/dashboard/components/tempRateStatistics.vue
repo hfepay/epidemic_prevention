@@ -1,6 +1,6 @@
 <!--今日体温测量表-->
 <template>
-  <title-box title="未戴口罩统计">
+  <title-box title="体温异常率统计">
     <template #title-right>
       <el-date-picker
         type="daterange"
@@ -25,6 +25,12 @@ import { getLineOption } from '@/views/dashboard/components/option'
 
 export default {
   name: 'NowTempChart',
+  props: {
+    thisHeader: {
+      type: Boolean,
+      default: true
+    }
+  },
   data() {
     return {
       radio1: '1'
@@ -36,7 +42,7 @@ export default {
   },
   computed: {
     options() {
-      return getLineOption({ color: '#FBA224' })
+      return getLineOption({ color: 'rgb(111, 17, 27)', yType: '%', data: [10, 12, 13, 15, 21, 1, 9] })
     }
   }
 }

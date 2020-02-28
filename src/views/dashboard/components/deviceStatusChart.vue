@@ -42,10 +42,12 @@ export default {
   },
   computed: {
     options() {
-      return getPieOption([
-        { value: 80, name: '在线' },
-        { value: 20, name: '离线' }
-      ])
+      return getPieOption({
+        data: [
+          { value: 80, name: '在线' },
+          { value: 20, name: '离线' }
+        ], name: '设备统计'
+      })
     },
     images() {
       return {
@@ -62,7 +64,7 @@ export default {
     width: 100%;
     height: 100%;
     display: flex;
-    font-family:Source Han Sans CN;
+    font-family: Source Han Sans CN;
 
     .now-temp-echarts, .now-temp-text {
       width: 50%;
@@ -70,7 +72,6 @@ export default {
 
     .detail {
       min-width: 120px;
-      height: 40px;
       text-align: center;
       border: 1px solid rgba(5, 122, 197, 1);
       border-radius: 19px;
@@ -97,25 +98,29 @@ export default {
         flex-wrap: wrap;
         margin: 10px 0;
       }
+
       .icon {
         width: 55px;
         height: 55px;
       }
+
       .text {
         width: calc(100% - 55px);
         padding-left: 19px;
-        font-size:18px;
-        font-weight:bold;
-        color:rgba(255,255,255,1);
-        line-height:25px;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 1);
+        line-height: 25px;
+
         .device-detail {
-          font-size:18px;
-          font-weight:400;
-          line-height:30px;
-          color:rgba(13,203,9,1);
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 30px;
+          color: rgba(13, 203, 9, 1);
         }
+
         .device-detail:last-child {
-          color:rgba(214,0,0,1);
+          color: rgba(214, 0, 0, 1);
         }
       }
     }
