@@ -48,9 +48,11 @@ export default {
     .title /deep/.el-range-editor--small.el-input__inner {
       background-color: #010A1B;
       border: 1px solid #057AC5;
+      width: 250px;
     }
     .title /deep/ .el-range-editor--small .el-range-separator {
       color: #606266;
+      width: 25px;
     }
     .body {
       height: calc(100% - 50px);

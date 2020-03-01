@@ -30,12 +30,22 @@ export default {
 
 <style lang="scss" scoped>
   .hf-dashboard {
+    position: absolute;
+    left: 0;
+    top: 50px;
     width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #010A1B;
   }
+
   .hf-content {
     width: 100%;
-    height: calc(100vh - 245px);
+    height: calc(100vh - 250px);
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
   }
   .width33 {
     width: 33.2%;

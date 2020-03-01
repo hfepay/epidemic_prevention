@@ -31,7 +31,13 @@ export default {
 
 <style lang="scss" scoped>
   .hf-dashboard {
+    position: absolute;
+    left: 0;
+    top: 50px;
     width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #010A1B;
   }
 
   .hf-content {

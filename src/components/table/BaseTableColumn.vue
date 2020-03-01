@@ -14,7 +14,7 @@
       v-else
       :prop="col.prop"
       :show-overflow-tooltip="col.tooltip"
-      :align="col.align"
+      :align="col.align || 'center'"
       :label="col.label"
       :width="col.width"
       :min-width="col.minWidth"

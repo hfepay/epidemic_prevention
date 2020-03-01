@@ -11,8 +11,7 @@
       </el-date-picker>
     </template>
     <div class="this-body">
-      <div class="this-header">
-      </div>
+      <div class="this-header"></div>
       <echarts :options="options"></echarts>
     </div>
   </title-box>

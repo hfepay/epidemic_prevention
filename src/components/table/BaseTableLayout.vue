@@ -102,8 +102,10 @@ export default {
     display: flex;
     width: 100%;
     .operate{
-      flex: 1;
-      text-align: right;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
     }
   }
 
