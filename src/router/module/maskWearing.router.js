@@ -10,6 +10,12 @@ const router = [{
       name: 'SnapShot',
       component: () => import(`@/views${moduleName}/snapShot`),
       meta: { title: '抓拍记录' }
+    },
+    {
+      path: 'realTime',
+      name: 'RealTime',
+      component: () => import(`@/views${moduleName}/realTime`),
+      meta: { title: '实时监控 ' }
     }
   ]
 }]

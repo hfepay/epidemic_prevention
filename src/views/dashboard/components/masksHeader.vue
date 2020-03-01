@@ -9,6 +9,7 @@
       <div class="text">
         实时<br>抓拍
       </div>
+      <div class="leftBt"></div>
       <div class="imgs">
         <div v-for="item in 5" :key="item" class="imgItem">
           <el-image
@@ -19,6 +20,7 @@
           </div>
         </div>
       </div>
+      <div class="rightBt"></div>
     </div>
     <div class="right">
       <div class="title text-center">今日未戴口罩人数</div>
@@ -86,6 +88,25 @@ export default {
       display: flex;
       align-items: center;
       padding: 0 4%;
+      position: relative;
+      .leftBt, .rightBt {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: .1s;
+      }
+      .leftBt:hover, .rightBt:hover {
+        box-shadow: 0 0 2px 2px #66b1ff;
+      }
+      .leftBt {
+        background: url("../../../assets/image/icon/leftBt.png") no-repeat center;
+        background-size: 100%;
+      }
+      .rightBt {
+        background: url("../../../assets/image/icon/rightBt.png") no-repeat center;
+        background-size: 100%;
+      }
       .text {
         font-size: 40px;
         line-height: 45px;
@@ -94,9 +115,8 @@ export default {
         color:rgba(255,255,255,1);
       }
       .imgs {
-        width: calc(100% - 80px);
+        width: calc(100% - 144px);
         height: 100%;
-        padding: 0 40px ;
         display: flex;
         .imgItem {
           height: 100%;

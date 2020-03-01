@@ -62,7 +62,8 @@
       </template>
     </base-table-layout>
     <base-dialog
-      :title="DialogForm['id']?'修改':'新增'"
+      title="详情"
+      top="5vh"
       :visible.sync="Mixins_$DialogVisible"
       custom-class="max-width"
       center
@@ -74,9 +75,17 @@
         :form-headers="DialogFormHeader"
         :rules="DialogFormRules"
         label-width="120px"
+        :show-default-foot="false"
         @submit="Mixins_$Submit"
         @cancel="Mixins_$DialogVisible = false"
       >
+        <template slot="faceImg">
+          <el-form-item label="人脸照片：">
+            <el-image
+              style="width: 100px; height: 100px"
+              src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"></el-image>
+          </el-form-item>
+        </template>
       </base-form>
     </base-dialog>
   </div>
@@ -102,14 +111,19 @@ export default {
         confirmPassword: ''
       },
       DialogFormHeader: [
-        { label: '旅客姓名', prop: 'account', type: 'text' },
-        { label: '证件类别', prop: 'account', type: 'text' },
-        { label: '证件号', prop: 'account', type: 'text' },
-        { label: '航班号', prop: 'account', type: 'text' },
-        { label: '测量位置', prop: 'account', type: 'text' },
-        { label: '测量体温', prop: 'account', type: 'text' },
-        { label: '体温状态', prop: 'status', type: 'text' },
-        { label: '测量时间', prop: 'createTime', type: 'text' }
+        { label: '旅客姓名：', prop: 'account', type: 'text' },
+        { label: '证件类别：', prop: 'account', type: 'text' },
+        { label: '证件号：', prop: 'account', type: 'text' },
+        { label: '航班号：', prop: 'account', type: 'text' },
+        { label: '航班类型：', prop: 'account', type: 'text' },
+        { label: '登机口：', prop: 'account', type: 'text' },
+        { label: '出发机场：', prop: 'account', type: 'text' },
+        { label: '座位号：', prop: 'account', type: 'text' },
+        { label: '出发-到达：', prop: 'account', type: 'text' },
+        { label: '测量体温：', prop: 'account', type: 'text' },
+        { label: '体温状态：', prop: 'status', type: 'text' },
+        { label: '测量时间：', prop: 'createTime', type: 'text' },
+        { label: '人脸照片：', slot: 'faceImg', type: 'text' }
       ],
       DialogForm: {
         account: ''
